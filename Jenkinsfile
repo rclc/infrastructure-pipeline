@@ -11,7 +11,7 @@ node('linux') {
     }
 
     stage("CreateInstance") {
-        sh "aws ec2 run-instances --image-id ami-287dnf7 --count 1 --instance-type t2.micro --key-name seis665-demo --security-group-ids sg-0fc84e78 --region us-east-1"
+        sh "aws ec2 run-instances --image-id ami-467ca739 --count 1 --instance-type t2.micro --key-name seis665-demo --security-group-ids sg-0fc84e78 --region us-east-1"
     }
     
     
