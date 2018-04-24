@@ -15,6 +15,7 @@ node('linux') {
     }
     
     stage("TerminateInstance") {
+       sh "aws ec2 describe-instances | jq ." 
        def output = sh returnStdout: true, script: 'aws ec2 describe-instances | jq .'
        sh "aws ec2 wait instance-running --instance-ids $output"
        sh "aws ec2 terminate-instances --instance-ids $output"
